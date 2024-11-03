@@ -57,9 +57,15 @@ En cada opción que implica seleccionar a una persona, si no se encuentra la per
 
 ## Ejemplo de Flujo de Uso
 Agregar a "Juan" como raíz del árbol.
+
 Agregar una mascota ("Fido") a "Juan".
+
 Agregar "Pedro" como hermano de "Juan":
+
 Si "Juan" no tiene padres asignados, el sistema ofrecerá la opción de crear nuevos padres para ambos.
+
 Asignar a "María" como pareja de "Juan".
+
 Agregar a "Ana" como hija de "Juan" y "María".
+
 Convertir a "Ana" y "Pedro" en hermanos (si ya existen ambos, se asignarán los mismos padres).
