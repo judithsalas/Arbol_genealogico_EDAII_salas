@@ -16,7 +16,7 @@ Este proyecto es un sistema de gestión de árbol genealógico interactivo en Py
 Para ejecutar este sistema, necesitas tener Python y las bibliotecas requeridas. Puedes instalarlas utilizando `pip`:
 
 ```bash
-pip install matplotlib networkx fpdf
+pip install matplotlib networkx
 ```
 
 ## Ejecución
@@ -60,12 +60,9 @@ python main.py
 - Python 3.x
 - Matplotlib
 - Networkx
-- FPDF (para generar informes si es necesario)
-
+  
 ## Notas sobre Eficiencia y Escalabilidad
 
 Este sistema es adecuado para familias pequeñas a medianas. Si se planea almacenar relaciones más complejas o un árbol de gran tamaño, es recomendable considerar una base de datos para manejar consultas más avanzadas y mejorar la eficiencia de la visualización.
 
-## Licencia
 
-Este proyecto es de libre uso y distribución para fines educativos y personales.
