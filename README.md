@@ -1,71 +1,71 @@
-# Sistema de Árbol Genealógico Interactivo
+# Sistema de Árbol Genealógico Interactivo en Python
 
-Objetivo: Desarrollar una aplicación en Python para gestionar un árbol genealógico que permita agregar personas, relaciones familiares (padres, madres, hermanos, pareja) y mascotas. El sistema debe ser interactivo y permitir a los usuarios ver y modificar el árbol genealógico de forma intuitiva.
+Este proyecto es un sistema de gestión de árbol genealógico interactivo en Python. La aplicación permite agregar personas, establecer relaciones familiares (padres, hermanos, parejas) y agregar mascotas para cada persona. El sistema también proporciona una visualización gráfica del árbol genealógico, utilizando `networkx` y `matplotlib` para mostrar las conexiones entre personas y mascotas.
 
-## Estructuras Básicas
-Clase Persona: Representa a cada miembro de la familia con atributos como nombre, fecha de nacimiento, ID único, padre, madre, pareja, hijos y una lista de mascotas.
-Clase Mascota: Representa a las mascotas con atributos como nombre, especie y fecha de nacimiento, y se asocia a una persona específica como su dueño.
+## Características
 
-## Funcionalidades Implementadas
+- **Agregar Personas**: Crea nuevas personas en el árbol con atributos como nombre, fecha de nacimiento, y padres/madres asignados.
+- **Agregar Hermano/Hermana**: Opción dual para agregar un nuevo hermano a una persona existente o hacer que dos personas ya existentes se conviertan en hermanos.
+- **Asignar Pareja**: Establece una relación de pareja entre dos personas, representada con una línea punteada en el gráfico.
+- **Agregar Mascota**: Permite agregar una mascota para una persona específica, con atributos como nombre, especie y fecha de nacimiento.
+- **Asignar Padre/Madre**: Permite asignar padres a una persona en cualquier momento, incluso después de haber sido creada.
+- **Visualización del Árbol Genealógico**: Usa `networkx` y `matplotlib` para mostrar el árbol genealógico de forma gráfica.
 
-1. Agregar Persona
-Permite crear una nueva persona con información básica (nombre, fecha de nacimiento, ID).
-Opción de asignar un padre y/o una madre en el momento de agregar la persona.
+## Instalación
 
-2. Agregar Hermano/Hermana
+Para ejecutar este sistema, necesitas tener Python y las bibliotecas requeridas. Puedes instalarlas utilizando `pip`:
 
-- Opción Dual:
-  Agregar un nuevo hermano/hermana: Permite crear una nueva persona y asignarla como hermano/hermana de una persona existente.
-  Convertir a dos personas existentes en hermanos/hermanas: Permite seleccionar dos personas ya existentes y establecer que tienen los mismos padres.
+```bash
+pip install matplotlib networkx fpdf
+```
 
-- Asignación de Padres:
-  Si el hermano existente tiene padres, el nuevo hermano recibe automáticamente esos mismos padres.
-  Si ninguno tiene padres, se da la opción de crear nuevos padres y asignarlos a ambos.
+## Ejecución
 
-3. Eliminar Persona
+Ejecuta el archivo `main.py` para iniciar el programa y acceder al menú interactivo:
 
-Permite eliminar a una persona del árbol, eliminando también la referencia en los padres y hermanos.
+```bash
+python main.py
+```
 
-4. Asignar Pareja
+## Menú de Opciones
 
-Permite establecer una relación de pareja entre dos personas, lo cual se representa en el árbol genealógico.
+1. **Agregar miembro**: Crea un nuevo miembro en el árbol y asigna padres si es necesario.
+2. **Agregar hermano/hermana**: Opción dual para agregar un nuevo hermano o hacer que dos personas existentes se conviertan en hermanos.
+3. **Eliminar miembro**: Elimina una persona del árbol genealógico.
+4. **Asignar pareja**: Define una relación de pareja entre dos personas.
+5. **Agregar mascota**: Asocia una mascota a una persona en el árbol.
+6. **Asignar padre o madre a un miembro**: Permite asignar padres/madres en cualquier momento.
+7. **Buscar relación**: Busca la relación entre dos personas.
+8. **Mostrar árbol genealógico**: Muestra el árbol genealógico gráficamente.
+9. **Salir**: Cierra el programa.
 
-5. Agregar Mascota
+## Estructura del Código
 
-Permite agregar una mascota a una persona específica, asignando los datos de la mascota (nombre, especie, fecha de nacimiento).
-Las mascotas se visualizan como nodos en el gráfico, conectados a su dueño, y se distinguen por un color diferente.
+- `arbol_genealogico.py`: Contiene las clases `Persona`, `Mascota` y `ArbolGenealogico`, las cuales definen la estructura de los miembros, mascotas y las funciones para manejar el árbol genealógico.
+- `main.py`: Proporciona la interfaz de usuario en línea de comandos (CLI) para interactuar con el árbol genealógico.
 
-6. Asignar Padre o Madre en Cualquier Momento
+## Ejemplo de Uso
 
-Permite asignar o cambiar el padre o la madre de una persona en cualquier momento. Si no se encuentra un padre/madre específico, el sistema ofrece la opción de crear uno nuevo.
+```plaintext
+1. Agrega a "Juan" como raíz del árbol.
+2. Agrega una mascota llamada "Fido" a "Juan".
+3. Agrega a "Pedro" como hermano de "Juan". Si "Juan" no tiene padres asignados, se ofrece la opción de crearlos.
+4. Asigna a "María" como pareja de "Juan".
+5. Agrega a "Ana" como hija de "Juan" y "María".
+6. Convierte a "Ana" y "Pedro" en hermanos (si ya existen ambos, se asignan los mismos padres).
+```
 
-7. Buscar Relación
+## Requerimientos de Software
 
-Permite verificar la relación entre dos personas en el árbol genealógico.
+- Python 3.x
+- Matplotlib
+- Networkx
+- FPDF (para generar informes si es necesario)
 
-8. Visualización del Árbol Genealógico
+## Notas sobre Eficiencia y Escalabilidad
 
-Usa la librería networkx y matplotlib para representar gráficamente el árbol genealógico.
-Las personas se representan como nodos conectados por líneas que representan las relaciones familiares (padres, pareja).
-Las mascotas se distinguen con un color diferente y se conectan solo a sus dueños.
+Este sistema es adecuado para familias pequeñas a medianas. Si se planea almacenar relaciones más complejas o un árbol de gran tamaño, es recomendable considerar una base de datos para manejar consultas más avanzadas y mejorar la eficiencia de la visualización.
 
-## Funcionalidad Interactiva del Menú
+## Licencia
 
-El sistema tiene un menú interactivo con opciones claras para navegar entre las funcionalidades.
-Los usuarios pueden crear relaciones familiares y realizar modificaciones en el árbol de forma intuitiva.
-En cada opción que implica seleccionar a una persona, si no se encuentra la persona, el sistema pregunta al usuario si desea intentarlo nuevamente o regresar al menú principal.
-
-## Ejemplo de Flujo de Uso
-Agregar a "Juan" como raíz del árbol.
-
-Agregar una mascota ("Fido") a "Juan".
-
-Agregar "Pedro" como hermano de "Juan":
-
-Si "Juan" no tiene padres asignados, el sistema ofrecerá la opción de crear nuevos padres para ambos.
-
-Asignar a "María" como pareja de "Juan".
-
-Agregar a "Ana" como hija de "Juan" y "María".
-
-Convertir a "Ana" y "Pedro" en hermanos (si ya existen ambos, se asignarán los mismos padres).
+Este proyecto es de libre uso y distribución para fines educativos y personales.
