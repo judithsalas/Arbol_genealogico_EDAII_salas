@@ -14,13 +14,13 @@ Opción de asignar un padre y/o una madre en el momento de agregar la persona.
 
 2. Agregar Hermano/Hermana
 
-Opción Dual:
-Agregar un nuevo hermano/hermana: Permite crear una nueva persona y asignarla como hermano/hermana de una persona existente.
-Convertir a dos personas existentes en hermanos/hermanas: Permite seleccionar dos personas ya existentes y establecer que tienen los mismos padres.
+- Opción Dual:
+  Agregar un nuevo hermano/hermana: Permite crear una nueva persona y asignarla como hermano/hermana de una persona existente.
+  Convertir a dos personas existentes en hermanos/hermanas: Permite seleccionar dos personas ya existentes y establecer que tienen los mismos padres.
 
-Asignación de Padres:
-Si el hermano existente tiene padres, el nuevo hermano recibe automáticamente esos mismos padres.
-Si ninguno tiene padres, se da la opción de crear nuevos padres y asignarlos a ambos.
+- Asignación de Padres:
+  Si el hermano existente tiene padres, el nuevo hermano recibe automáticamente esos mismos padres.
+  Si ninguno tiene padres, se da la opción de crear nuevos padres y asignarlos a ambos.
 
 3. Eliminar Persona
 
